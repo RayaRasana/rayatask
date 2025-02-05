@@ -1,4 +1,3 @@
-import moment from 'moment-jalaali';
 import socket from './socket';
 import { transformAttachment } from './attachments';
 
