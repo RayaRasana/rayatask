@@ -19,7 +19,7 @@
     opacity: 0;
     padding: 0;
     position: absolute;
-    right: 2px;
+    left: 2px;
     top: 2px;
     width: 32px;
 
@@ -33,7 +33,7 @@
     cursor: pointer;
     display: block;
     line-height: 20px;
-    padding: 10px 34px 6px 14px;
+    padding: 10px 14px 6px 34px;
     text-overflow: ellipsis;
     max-width: 400px;
     overflow: hidden;
@@ -85,6 +85,7 @@
     height: 56px;
     overflow-x: auto;
     overflow-y: hidden;
+    direction: rtl;
 
     &:hover {
       height: 38px;

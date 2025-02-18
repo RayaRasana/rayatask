@@ -8,6 +8,7 @@
     background: #fff;
     border: 0;
     box-sizing: border-box;
+    text-align: right;
     color: #333;
     display: block;
     line-height: 1.5;
@@ -17,6 +18,7 @@
     padding: 8px 12px;
     resize: none;
     width: 100%;
+    direction: rtl;
 
     &:focus {
       outline: none;

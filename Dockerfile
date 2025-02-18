@@ -1,8 +1,11 @@
 FROM node:18-alpine AS server-dependencies
 
-RUN apk -U upgrade \
-  && apk add build-base python3 \
-  --no-cache
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.18/main" > /etc/apk/repositories \
+  && echo "http://dl-cdn.alpinelinux.org/alpine/v3.18/community" >> /etc/apk/repositories \
+  && apk update \
+  && apk upgrade \
+  && apk add build-base python3 --no-cache
+
 
 WORKDIR /app
 

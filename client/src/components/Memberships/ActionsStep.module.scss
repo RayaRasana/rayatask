@@ -9,6 +9,7 @@
     text-align: left;
     text-decoration: underline;
     transition: none;
+    text-align: right;
 
     &:hover {
       background: rgba(9, 30, 66, 0.08);
@@ -23,22 +24,25 @@
 
   .email {
     color: #888888;
+    text-align: right;
     font-size: 14px;
     line-height: 1.2;
-    padding: 2px 0 2px 2px;
+    padding: 2px 5px 2px 2px;
   }
 
   .name {
+    text-align: right;
     color: #212121;
     font-size: 16px;
     font-weight: bold;
     line-height: 1.2;
-    padding: 9px 28px 0 2px;
+    padding: 9px 5px 0 2px;
   }
 
   .user {
     display: inline-block;
     padding-right: 8px;
+    float: right;
     padding-top: 10px;
     vertical-align: top;
   }

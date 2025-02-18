@@ -57,6 +57,26 @@
   unicode-range: U+0000-036F, U+0400-1EFF, U+2000-10FFFF;
 }
 
+@font-face {
+  font-family: 'IranSansLight';
+  src: url('./assets/fonts/IRANSansXFaNum-Light.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'IranSansMedium';
+  src: url('./assets/fonts/IRANSansXFaNum-Medium.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'IranSansRegular';
+  src: url('./assets/fonts/IRANSansXFaNum-Regular.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'IranSansBold';
+  src: url('./assets/fonts/IRANSansXFaNum-Bold.woff2') format("woff2");
+}
+
 /*!
 * # Semantic UI 2.4.1 - Reset
 * http://github.com/semantic-org/semantic-ui/
@@ -78,6 +98,10 @@
 *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
+}
+
+* {
+  font-family: "IranSansLight";
 }
 
 html {
@@ -617,7 +641,7 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #ffffff;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
@@ -633,7 +657,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   line-height: 1.28571429em;
   margin: calc(2rem - 0.14285714em) 0em 1rem;
   font-weight: bold;
@@ -830,7 +854,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   vertical-align: baseline;
   background: #e0e1e2 none;
   color: rgba(0, 0, 0, 0.6);
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   margin: 0em 0.25em 0em 0em;
   padding: 0.78571429em 1.5em 0.78571429em;
   text-transform: none;
@@ -1511,7 +1535,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 }
 
 .ui.button:not(.icon)>.icon:not(.button):not(.dropdown) {
-  margin: 0em 0.42857143em 0em -0.21428571em;
+  margin: 0em -0.21428571em 0em 0.42857143em;
 }
 
 .ui.button:not(.icon)>.right.icon:not(.button):not(.dropdown) {
@@ -1535,7 +1559,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui[class*="right floated"].buttons,
 .ui[class*="right floated"].button {
-  float: right;
+  float: left;
   margin-right: 0em;
   margin-left: 0.25em;
 }
@@ -5305,7 +5329,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 /* Text Container */
 
 .ui.text.container {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   max-width: 700px !important;
   line-height: 1.5;
 }
@@ -6916,7 +6940,7 @@ i.flag.zimbabwe:before {
   border: none;
   margin: calc(2rem - 0.14285714em) 0em 1rem;
   padding: 0em 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: bold;
   line-height: 1.28571429em;
   text-transform: none;
@@ -7022,6 +7046,7 @@ Loose Coupling
 
 .ui.header+p {
   margin-top: 0em;
+  text-align: right;
 }
 
 /*******************************
@@ -7081,6 +7106,7 @@ Content Heading
 .ui.huge.header {
   min-height: 1em;
   font-size: 2em;
+  text-align: right;
 }
 
 .ui.large.header {
@@ -14159,6 +14185,7 @@ img.ui.bordered.image {
   width: 450px;
   height: auto;
   font-size: 1.14285714rem;
+  padding: 40px;
 }
 
 .ui.big.images .image,
@@ -14249,7 +14276,7 @@ img.ui.bordered.image {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
   line-height: 1.21428571em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   padding: 0.67857143em 1em;
   background: #ffffff;
   border: 1px solid rgba(34, 36, 38, 0.15);
@@ -14482,7 +14509,7 @@ img.ui.bordered.image {
   line-height: 1;
   text-align: center;
   top: 0px;
-  right: 0px;
+  left: 0px;
   margin: 0em;
   height: 100%;
   width: 2.67142857em;
@@ -14497,7 +14524,8 @@ img.ui.bordered.image {
 }
 
 .ui.icon.input>input {
-  padding-right: 2.67142857em !important;
+  padding-left: 2.67142857em !important;
+  text-align: right;
 }
 
 .ui.icon.input>i.icon:before,
@@ -16394,7 +16422,7 @@ ol.ui.list ol li,
 .ui.list>.item .header {
   display: block;
   margin: 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -19582,7 +19610,7 @@ ol.ui.horizontal.list li:before,
 /* Title */
 
 .ui.steps .step .title {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1.14285714em;
   font-weight: bold;
 }
@@ -20366,13 +20394,15 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="text"],
 .ui.form input[type="file"],
 .ui.form input[type="url"] {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   line-height: 1.21428571em;
   padding: 0.67857143em 1em;
+  text-align: right;
+  direction: rtl;
   font-size: 1em;
   background: #ffffff;
   border: 1px solid rgba(34, 36, 38, 0.15);
@@ -20658,6 +20688,8 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="text"]:focus,
 .ui.form input[type="file"]:focus,
 .ui.form input[type="url"]:focus {
+  text-align: right;
+  direction: rtl;
   color: rgba(0, 0, 0, 0.95);
   border-color: #85b7d9;
   border-radius: 0.28571429rem;
@@ -23790,7 +23822,7 @@ ol.ui.horizontal.list li:before,
   display: -ms-flexbox;
   display: flex;
   margin: 1rem 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   background: #ffffff;
   font-weight: normal;
   border: 1px solid rgba(34, 36, 38, 0.15);
@@ -23828,6 +23860,7 @@ ol.ui.horizontal.list li:before,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: row-reverse;
 }
 
 /*--------------
@@ -24297,7 +24330,8 @@ Floated Menu / Item
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: auto !important;
+  margin-right: auto !important;
+  direction: rtl;
 }
 
 /* Swapped Borders */
@@ -24792,6 +24826,7 @@ Floated Menu / Item
   margin-left: 0em;
   margin-right: 0em;
   border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+  direction: rtl;
 }
 
 .ui.secondary.pointing.menu .item {
@@ -26117,7 +26152,7 @@ Floated Menu / Item
 
 .ui.message .header {
   display: block;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: -0.14285714em 0em 0rem 0em;
 }
@@ -27850,11 +27885,13 @@ Vertical Alignment
 
 .ui[class*="very basic"].table {
   border: none;
+  direction: rtl;
 }
 
 .ui[class*="very basic"].table:not(.sortable):not(.striped) th,
 .ui[class*="very basic"].table:not(.sortable):not(.striped) td {
   padding: "";
+  text-align: right;
 }
 
 .ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,
@@ -27869,6 +27906,7 @@ Vertical Alignment
 
 .ui[class*="very basic"].table:not(.sortable):not(.striped) thead tr:first-child th {
   padding-top: 0em;
+  text-align: right;
 }
 
 /*--------------
@@ -28431,7 +28469,7 @@ Vertical Alignment
 .ui.card>.content>.header {
   display: block;
   margin: "";
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: rgba(0, 0, 0, 0.85);
 }
 
@@ -30166,7 +30204,7 @@ a.ui.card:hover,
 .ui.items>.item>.content>.header {
   display: inline-block;
   margin: -0.21425em 0em 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -30642,7 +30680,7 @@ a.ui.card:hover,
 
 .ui.statistics .statistic>.value,
 .ui.statistic>.value {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 4rem;
   font-weight: normal;
   line-height: 1em;
@@ -30657,7 +30695,7 @@ a.ui.card:hover,
 
 .ui.statistics .statistic>.label,
 .ui.statistic>.label {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
@@ -31205,7 +31243,7 @@ a.ui.card:hover,
 
 .ui.accordion .title:not(.ui) {
   padding: 0.5em 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -31467,6 +31505,7 @@ a.ui.card:hover,
   font-size: 1rem;
   line-height: 17px;
   min-width: 17px;
+  float: right;
 }
 
 /* HTML Checkbox */
@@ -32671,8 +32710,8 @@ Dropdown Icon
 .ui.dropdown .menu>.item>.image,
 .ui.dropdown .menu>.item>img {
   margin-left: 0em;
-  float: none;
-  margin-right: 0.78571429rem;
+  float: right;
+  margin-left: 0.78571429rem;
 }
 
 /*--------------
@@ -32778,6 +32817,10 @@ Dropdown Icon
   transition: box-shadow 0.1s ease, width 0.1s ease;
   transition: box-shadow 0.1s ease, width 0.1s ease,
     -webkit-box-shadow 0.1s ease;
+
+  .divider.text {
+    float: right;
+  }
 }
 
 .ui.selection.dropdown.visible,
@@ -32801,7 +32844,7 @@ select.ui.dropdown {
   height: auto;
   line-height: 1.21428571em;
   top: 0.78571429em;
-  right: 1em;
+  left: 1em;
   z-index: 3;
   margin: -0.78571429em;
   padding: 0.91666667em;
@@ -32881,6 +32924,11 @@ select.ui.dropdown {
   padding: 0.78571429rem 1.14285714rem !important;
   white-space: normal;
   word-wrap: normal;
+  min-height: 37px;
+
+  .text {
+    float: right;
+  }
 }
 
 /* User Item */
@@ -34246,7 +34294,7 @@ select.ui.dropdown {
   position: absolute;
   display: none;
   z-index: 1001;
-  text-align: left;
+  text-align: right;
   background: #ffffff;
   border: none;
   -webkit-box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2),
@@ -34309,7 +34357,7 @@ select.ui.dropdown {
 
 .ui.modal>.header {
   display: block;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   background: #ffffff;
   margin: 0em;
   padding: 1.25rem 1.5rem;
@@ -34574,7 +34622,7 @@ select.ui.dropdown {
 
 .ui.basic.modal>.close {
   top: 1rem;
-  right: 1.5rem;
+  left: 1.5rem;
 }
 
 .ui.inverted.dimmer>.basic.modal {
@@ -34815,6 +34863,9 @@ select.ui.dropdown {
   .ui.tiny.modal {
     width: 540px;
     margin: 0em 0em 0em 0em;
+    padding: 30px;
+    border-radius: 10px;
+    background: #222a;
   }
 }
 
@@ -34872,6 +34923,7 @@ select.ui.dropdown {
 
 .ui.large.modal>.header {
   font-size: 1.6em;
+  text-align: right;
 }
 
 @media only screen and (max-width: 767px) {
@@ -35099,11 +35151,16 @@ a.ui.nag {
     0px 2px 10px 0px rgba(34, 36, 38, 0.15);
   box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),
     0px 2px 10px 0px rgba(34, 36, 38, 0.15);
+
+  .content {
+    text-align: right;
+    direction: rtl;
+  }
 }
 
 .ui.popup>.header {
   padding: 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1.14285714em;
   line-height: 1.2;
   font-weight: bold;
@@ -36438,6 +36495,8 @@ a.ui.nag {
 
 .ui.tiny.progress .bar {
   height: 0.5em;
+  position: absolute;
+  right: 0px;
 }
 
 .ui.small.progress {
@@ -36899,7 +36958,7 @@ a.ui.nag {
 
 .ui.search>.results .result .title {
   margin: -0.14285714em 0em 0em;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.85);
@@ -36925,7 +36984,7 @@ a.ui.nag {
 }
 
 .ui.search>.results>.message .header {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
@@ -37142,7 +37201,7 @@ a.ui.nag {
   width: 100px;
   white-space: nowrap;
   background: transparent;
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1em;
   padding: 0.4em 1em;
   font-weight: bold;
@@ -40667,7 +40726,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
   resize: none !important;
 }
 
@@ -40679,7 +40738,7 @@ textarea {
   cursor: pointer;
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  left: 0.5rem;
   z-index: 1;
   opacity: 0.8;
   font-size: 20px;
@@ -40864,7 +40923,7 @@ textarea {
   color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
   display: inline-block;
-  margin: 0em 0.75em 0em 0em;
+  margin: 0em 0em 0em 0.75em;
   padding: 0 !important;
 }
 

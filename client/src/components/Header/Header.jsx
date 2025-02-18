@@ -9,6 +9,7 @@ import Paths from '../../constants/Paths';
 import NotificationsStep from './NotificationsStep';
 import User from '../User';
 import UserStep from '../UserStep';
+import RayaTaskLogo from '../../assets/images/RayaTask.png';
 
 import styles from './Header.module.scss';
 
@@ -43,7 +44,16 @@ const Header = React.memo(
       <div className={styles.wrapper}>
         {!project && (
           <Link to={Paths.ROOT} className={classNames(styles.logo, styles.title)}>
-            RayaTAsk
+            <img
+              className="Logo"
+              src={RayaTaskLogo}
+              alt="RAYATASK"
+              style={{
+                filter: 'invert(1)',
+                height: '30px',
+                margin: '10px 0',
+              }}
+            />
           </Link>
         )}
         <Menu inverted size="large" className={styles.menu}>
@@ -54,7 +64,7 @@ const Header = React.memo(
                 to={Paths.ROOT}
                 className={classNames(styles.item, styles.itemHoverable)}
               >
-                <Icon fitted name="arrow left" />
+                <Icon fitted name="arrow right" />
               </Menu.Item>
               <Menu.Item className={classNames(styles.item, styles.title)}>
                 {project.name}

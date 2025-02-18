@@ -1,6 +1,6 @@
 {
-  "name": "planka",
-  "version": "1.24.4",
+  "name": "rayatask",
+  "version": "1.0",
   "private": true,
   "homepage": "https://plankanban.github.io/planka",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/plankanban/planka.git"
   },
   "license": "AGPL-3.0",
-  "author": "Maksim Eltyshev",
+  "author": "RayaRasana",
   "scripts": {
     "client:build": "npm run build --prefix client",
     "client:lint": "npm run lint --prefix client",
@@ -39,21 +39,9 @@
       "npm run server:lint"
     ]
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
   "eslintConfig": {
-    "plugins": [
-      "prettier"
-    ],
-    "extends": [
-      "plugin:prettier/recommended"
-    ],
     "rules": {
-      "no-undef": "off",
-      "prettier/prettier": "error"
+      "no-undef": "off"
     }
   },
   "dependencies": {
@@ -63,12 +51,11 @@
     "husky": "^9.1.7",
     "knex": "^3.1.0",
     "lint-staged": "^15.2.10",
-    "moment-jalaali": "^0.10.4"
+    "moment-jalaali": "^0.10.4",
+    "node-sass": "^8"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3"
+    "prettier": "^3.5.1"
   }
 }

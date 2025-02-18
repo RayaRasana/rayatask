@@ -4,19 +4,25 @@
   }
 
   .descriptionSubtitle {
-    font-size: 24px;
     font-weight: normal;
+    font-family: "IranSansBold";
     margin-top: 8px;
+    font-size: 36px;
+    text-align: center;
   }
 
   .descriptionTitle {
-    font-size: 52px;
+
+    font-size: 140px;
+    text-align: center;
     margin-bottom: 8px;
   }
 
   .descriptionWrapper {
-    padding: 60px 0 0 80px;
+    padding: 0 0 0 80px;
     position: relative;
+    transform: translateY(-50%);
+    top: 50%;
   }
 
   .descriptionWrapperOverlay {
@@ -34,6 +40,7 @@
     font-size: 36px;
     font-weight: normal;
     margin-bottom: 32px;
+    font-family: "IranSansBold";
   }
 
   .fullHeight {
@@ -46,8 +53,9 @@
 
   .inputLabel {
     font-size: 16px;
-    font-weight: bold;
+    font-family: "IranSansMedium";
     line-height: 20px;
+    text-align: right;
     margin-bottom: 4px;
   }
 
@@ -62,6 +70,9 @@
   }
 
   .wrapper {
-    background: #fff;
+    background: radial-gradient(circle at center, #f4f4f4, #f4f4f4 10%, transparent 10%, transparent 20%, #f4f4f4 20%, #f4f4f4 30%, transparent 30%, transparent 40%, #f4f4f4 40%, #f4f4f4 50%, transparent 50%, transparent 60%, #f4f4f4 60%, #f4f4f4 70%, transparent 70%, transparent 80%, #f4f4f4 80%, #f4f4f4 90%, transparent 90%);
+    background-size: 3em 3em;
+    background-color: #ffffff;
+
   }
 }

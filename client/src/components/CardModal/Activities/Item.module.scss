@@ -1,5 +1,6 @@
 :global(#app) {
   .author {
+    float: right;
     color: #17394d;
     display: inline-block;
     font-weight: bold;
@@ -12,6 +13,8 @@
     padding-bottom: 14px;
     vertical-align: top;
     width: calc(100% - 40px);
+    text-align: right;
+    float: right;
   }
 
   .date {
@@ -19,15 +22,20 @@
     display: inline-block;
     font-size: 12px;
     line-height: 20px;
+    float: right;
+    direction: rtl;
   }
 
   .text {
     line-height: 20px;
+    float: right;
+    margin-right: 4px;
   }
 
   .user {
     display: inline-block;
-    padding: 4px 8px 0 0;
+    padding: 4px 0px 0 8px;
     vertical-align: top;
+    float: right;
   }
 }

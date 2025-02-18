@@ -2,7 +2,9 @@ import React, { useCallback, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { Button, Checkbox, Grid, Icon, Modal } from 'semantic-ui-react';
+import {
+  Button, Checkbox, Grid, Icon, Modal,
+} from 'semantic-ui-react';
 import { usePopup } from '../../lib/popup';
 import { Markdown } from '../../lib/custom-ui';
 
@@ -542,8 +544,8 @@ const CardModal = React.memo(
                     {isLinkCopied
                       ? t('common.linkIsCopied')
                       : t('action.copyLink', {
-                          context: 'title',
-                        })}
+                        context: 'title',
+                      })}
                   </Button>
                 )}
                 <DeletePopup
