@@ -55,7 +55,6 @@
     "node-sass": "^8"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
-    "prettier": "^3.5.1"
+    "eslint": "^8.57.1"
   }
 }

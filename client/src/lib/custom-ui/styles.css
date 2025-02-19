@@ -24331,7 +24331,7 @@ Floated Menu / Item
   display: -ms-flexbox;
   display: flex;
   margin-right: auto !important;
-  direction: rtl;
+  direction: ltr;
 }
 
 /* Swapped Borders */

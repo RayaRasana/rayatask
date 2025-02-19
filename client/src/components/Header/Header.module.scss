@@ -71,7 +71,7 @@
     border-radius: 8px;
     color: #fff;
     display: inline-block;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: bold;
     height: 16px;
     line-height: 16px;
@@ -96,6 +96,7 @@
 
     @media only screen and (min-width: 797px) {
       display: block;
+      display: none;
     }
   }
 

@@ -67,7 +67,9 @@ const getStatus = (dateTime, isCompleted) => {
   return null;
 };
 
-const DueDate = React.memo(({ value, size, isCompleted, isDisabled, withStatusIcon, onClick }) => {
+const DueDate = React.memo(({
+  value, size, isCompleted, isDisabled, withStatusIcon, onClick,
+}) => {
   const [t] = useTranslation();
   const forceUpdate = useForceUpdate();
 

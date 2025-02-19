@@ -6,13 +6,13 @@ import { transformAttachment } from './attachments';
 export const transformCard = (card) => ({
   ...card,
   ...(card.dueDate && {
-    dueDate: moment(card.dueDate).toDate(),
+    dueDate: new Date(card.dueDate),
   }),
   ...(card.stopwatch && {
     stopwatch: {
       ...card.stopwatch,
       ...(card.stopwatch.startedAt && {
-        startedAt: moment(card.stopwatch.startedAt).toDate(),
+        startedAt: new Date(card.stopwatch.startedAt),
       }),
     },
   }),
