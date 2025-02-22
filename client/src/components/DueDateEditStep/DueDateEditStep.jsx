@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import DatePicker from 'react-datepicker';
@@ -11,7 +13,10 @@ import parseTime from '../../utils/parse-time';
 
 import styles from './DueDateEditStep.module.scss';
 
-const DueDateEditStep = React.memo(({ defaultValue, onUpdate, onBack, onClose }) => {
+const DueDateEditStep = React.memo(({
+  defaultValue, onUpdate, onBack, onClose,
+
+}) => {
   const [t] = useTranslation();
 
   const [data, handleFieldChange, setData] = useForm(() => {

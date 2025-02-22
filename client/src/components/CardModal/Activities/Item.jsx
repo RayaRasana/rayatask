@@ -11,7 +11,9 @@ import User from '../../User';
 
 import styles from './Item.module.scss';
 
-const Item = React.memo(({ type, data, createdAt, user }) => {
+const Item = React.memo(({
+  type, data, createdAt, user,
+}) => {
   const [t] = useTranslation();
 
   let contentNode;
@@ -67,10 +69,11 @@ const Item = React.memo(({ type, data, createdAt, user }) => {
       <div className={classNames(styles.content)}>
         <div>{contentNode}</div>
         <span className={styles.date}>
-          {t(`format:${getDateFormat(createdAt)}`, {
+          {/* {t(`format:${getDateFormat(createdAt)}`, {
             postProcess: 'formatDate',
             value: createdAt,
-          })}
+          })} */}
+          {new Intl.DateTimeFormat('fa-IR-u-nu-latn', { dateStyle: 'long', timeStyle: 'short' }).format(new Date(createdAt))}
         </span>
       </div>
     </Comment>

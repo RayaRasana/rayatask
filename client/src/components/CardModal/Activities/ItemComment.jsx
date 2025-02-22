@@ -14,7 +14,9 @@ import DeleteStep from '../../DeleteStep';
 import styles from './ItemComment.module.scss';
 
 const ItemComment = React.memo(
-  ({ data, createdAt, isPersisted, user, canEdit, onUpdate, onDelete }) => {
+  ({
+    data, createdAt, isPersisted, user, canEdit, onUpdate, onDelete,
+  }) => {
     const [t] = useTranslation();
 
     const commentEdit = useRef(null);
@@ -35,20 +37,21 @@ const ItemComment = React.memo(
             ref={commentEdit}
             defaultData={data}
             onUpdate={onUpdate}
-            text={
+            text={(
               <div className={styles.text}>
                 <Markdown linkTarget="_blank">{data.text}</Markdown>
               </div>
-            }
-            actions={
+            )}
+            actions={(
               <div className={styles.title}>
                 <span>
                   <span className={styles.author}>{user.name}</span>
                   <span className={styles.date}>
-                    {t(`format:${getDateFormat(createdAt)}`, {
+                    {/* {t(`format:${getDateFormat(createdAt)}`, {
                       postProcess: 'formatDate',
                       value: createdAt,
-                    })}
+                    })} */}
+                    {new Intl.DateTimeFormat('fa-IR-u-nu-latn', { dateStyle: 'long', timeStyle: 'short' }).format(new Date(createdAt))}
                   </span>
                 </span>
                 {canEdit && (
@@ -74,7 +77,7 @@ const ItemComment = React.memo(
                   </Comment.Actions>
                 )}
               </div>
-            }
+            )}
           />
         </div>
       </Comment>

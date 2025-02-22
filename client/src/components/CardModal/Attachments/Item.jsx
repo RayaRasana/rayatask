@@ -2,7 +2,9 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { Button, Icon, Label, Loader } from 'semantic-ui-react';
+import {
+  Button, Icon, Label, Loader,
+} from 'semantic-ui-react';
 import { usePopup } from '../../../lib/popup';
 
 import EditStep from './EditStep';
@@ -93,10 +95,11 @@ const Item = React.forwardRef(
         <div className={styles.details}>
           <span className={styles.name}>{name}</span>
           <span className={styles.date}>
-            {t('format:longDateTime', {
+            {/* {t('format:longDateTime', {
               postProcess: 'formatDate',
               value: createdAt,
-            })}
+            })} */}
+            {new Intl.DateTimeFormat('fa-IR-u-nu-latn', { dateStyle: 'long', timeStyle: 'short' }).format(new Date(createdAt))}
           </span>
           {coverUrl && canEdit && (
             <span className={styles.options}>
@@ -110,11 +113,11 @@ const Item = React.forwardRef(
                 <span className={styles.optionText}>
                   {isCover
                     ? t('action.removeCover', {
-                        context: 'title',
-                      })
+                      context: 'title',
+                    })
                     : t('action.makeCover', {
-                        context: 'title',
-                      })}
+                      context: 'title',
+                    })}
                 </span>
               </button>
             </span>

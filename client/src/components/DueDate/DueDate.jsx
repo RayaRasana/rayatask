@@ -115,10 +115,11 @@ const DueDate = React.memo(({
         onClick && styles.wrapperHoverable,
       )}
     >
-      {t(`format:${dateFormat}`, {
+      {/* {t(`format:${dateFormat}`, {
         value,
         postProcess: 'formatDate',
-      })}
+      })} */}
+      {new Intl.DateTimeFormat('fa-IR-u-nu-latn', { dateStyle: 'long', timeStyle: 'short' }).format(new Date(value))}
       {withStatusIcon && statusRef.current && (
         // eslint-disable-next-line react/jsx-props-no-spreading
         <Icon {...STATUS_ICON_PROPS_BY_STATUS[statusRef.current]} className={styles.statusIcon} />
