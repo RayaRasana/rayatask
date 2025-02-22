@@ -29,7 +29,8 @@
   .text {
     line-height: 20px;
     float: right;
-    margin-right: 4px;
+    margin: 0 4px;
+    direction: rtl;
   }
 
   .user {
