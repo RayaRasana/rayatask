@@ -36,7 +36,9 @@ module.exports = {
       .intercept('pathNotFound', () => Errors.COMMENT_ACTION_NOT_FOUND);
 
     let { action } = path;
-    const { card, list, board, project } = path;
+    const {
+      card, list, board, project,
+    } = path;
 
     const isProjectManager = await sails.helpers.users.isProjectManager(currentUser.id, project.id);
 

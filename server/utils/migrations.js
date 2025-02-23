@@ -38,10 +38,9 @@ const addPosition = async (knex, tableName, parentFieldName) => {
   });
 };
 
-const removePosition = (knex, tableName) =>
-  knex.schema.table(tableName, (table) => {
-    table.dropColumn('position');
-  });
+const removePosition = (knex, tableName) => knex.schema.table(tableName, (table) => {
+  table.dropColumn('position');
+});
 
 module.exports = {
   addPosition,

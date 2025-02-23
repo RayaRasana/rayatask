@@ -6,9 +6,7 @@ async function doUpload(paramName, req, options) {
     ...options,
     dirname: options.dirname || sails.config.custom.uploadsTempPath,
   };
-  const upload = util.promisify((opts, callback) => {
-    return req.file(paramName).upload(opts, (error, files) => callback(error, files));
-  });
+  const upload = util.promisify((opts, callback) => req.file(paramName).upload(opts, (error, files) => callback(error, files)));
   return upload(uploadOptions);
 }
 

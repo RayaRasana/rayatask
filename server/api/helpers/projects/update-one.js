@@ -46,9 +46,9 @@ module.exports = {
         type: 'image',
       };
     } else if (
-      _.isNull(values.backgroundImage) &&
-      inputs.record.background &&
-      inputs.record.background.type === 'image'
+      _.isNull(values.backgroundImage)
+      && inputs.record.background
+      && inputs.record.background.type === 'image'
     ) {
       values.background = null;
     }
@@ -79,9 +79,9 @@ module.exports = {
 
     if (project) {
       if (
-        inputs.record.backgroundImage &&
-        (!project.backgroundImage ||
-          project.backgroundImage.dirname !== inputs.record.backgroundImage.dirname)
+        inputs.record.backgroundImage
+        && (!project.backgroundImage
+          || project.backgroundImage.dirname !== inputs.record.backgroundImage.dirname)
       ) {
         const fileManager = sails.hooks['file-manager'].getInstance();
 

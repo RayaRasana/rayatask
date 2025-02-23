@@ -20,9 +20,9 @@ const stopwatchValidator = (value) => {
   }
 
   if (
-    !_.isNull(value.startedAt) &&
-    _.isString(value.startedAt) &&
-    !moment(value.startedAt, moment.ISO_8601, true).isValid()
+    !_.isNull(value.startedAt)
+    && _.isString(value.startedAt)
+    && !moment(value.startedAt, moment.ISO_8601, true).isValid()
   ) {
     return false;
   }

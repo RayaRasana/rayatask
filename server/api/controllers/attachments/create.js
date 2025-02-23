@@ -41,7 +41,9 @@ module.exports = {
   async fn(inputs, exits) {
     const { currentUser } = this.req;
 
-    const { card, list, board, project } = await sails.helpers.cards
+    const {
+      card, list, board, project,
+    } = await sails.helpers.cards
       .getProjectPath(inputs.cardId)
       .intercept('pathNotFound', () => Errors.CARD_NOT_FOUND);
 

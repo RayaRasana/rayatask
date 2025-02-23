@@ -14,8 +14,7 @@ const valuesValidator = (value) => {
   return true;
 };
 
-const truncateString = (string, maxLength = 30) =>
-  string.length > maxLength ? `${string.substring(0, 30)}...` : string;
+const truncateString = (string, maxLength = 30) => (string.length > maxLength ? `${string.substring(0, 30)}...` : string);
 
 const buildAndSendMarkdownMessage = async (card, action, actorUser, send) => {
   const cardLink = `<${sails.config.custom.baseUrl}/cards/${card.id}|${card.name}>`;
@@ -129,19 +128,17 @@ module.exports = {
     );
 
     await Promise.all(
-      subscriptionUserIds.map(async (userId) =>
-        sails.helpers.notifications.createOne.with({
-          values: {
-            userId,
-            action,
-          },
-          project: inputs.project,
-          board: inputs.board,
-          list: inputs.list,
-          card: values.card,
-          actorUser: values.user,
-        }),
-      ),
+      subscriptionUserIds.map(async (userId) => sails.helpers.notifications.createOne.with({
+        values: {
+          userId,
+          action,
+        },
+        project: inputs.project,
+        board: inputs.board,
+        list: inputs.list,
+        card: values.card,
+        actorUser: values.user,
+      })),
     );
 
     if (sails.config.custom.slackBotToken) {

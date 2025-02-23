@@ -208,14 +208,12 @@ module.exports = {
         );
 
         await Promise.all(
-          labelIds.map(async (labelId) =>
-            CardLabel.create({
-              labelId,
-              cardId: card.id,
-            })
-              .tolerate('E_UNIQUE')
-              .fetch(),
-          ),
+          labelIds.map(async (labelId) => CardLabel.create({
+            labelId,
+            cardId: card.id,
+          })
+            .tolerate('E_UNIQUE')
+            .fetch()),
         );
 
         sails.sockets.broadcast(

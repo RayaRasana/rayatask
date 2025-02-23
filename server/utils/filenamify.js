@@ -56,8 +56,7 @@ function filenamify(string, options = {}) {
   }
 
   string = windowsReservedNameRegex().test(string) ? string + replacement : string;
-  const allowedLength =
-    typeof options.maxLength === 'number' ? options.maxLength : MAX_FILENAME_LENGTH;
+  const allowedLength = typeof options.maxLength === 'number' ? options.maxLength : MAX_FILENAME_LENGTH;
   if (string.length > allowedLength) {
     const extensionIndex = string.lastIndexOf('.');
     if (extensionIndex === -1) {

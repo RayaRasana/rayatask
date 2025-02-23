@@ -18,9 +18,9 @@ const backgroundValidator = (value) => {
   }
 
   if (
-    value.type === Project.BackgroundTypes.GRADIENT &&
-    _.size(value) === 2 &&
-    Project.BACKGROUND_GRADIENTS.includes(value.name)
+    value.type === Project.BackgroundTypes.GRADIENT
+    && _.size(value) === 2
+    && Project.BACKGROUND_GRADIENTS.includes(value.name)
   ) {
     return true;
   }

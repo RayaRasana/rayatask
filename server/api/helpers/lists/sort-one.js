@@ -55,14 +55,12 @@ module.exports = {
     const positions = cards.map((c) => c.position).sort((a, b) => a - b);
 
     cards = await Promise.all(
-      cards.map(({ id }, index) =>
-        Card.updateOne({
-          id,
-          listId: inputs.record.id,
-        }).set({
-          position: positions[index],
-        }),
-      ),
+      cards.map(({ id }, index) => Card.updateOne({
+        id,
+        listId: inputs.record.id,
+      }).set({
+        position: positions[index],
+      })),
     );
 
     sails.sockets.broadcast(

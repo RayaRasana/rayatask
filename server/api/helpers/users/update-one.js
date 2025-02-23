@@ -96,8 +96,8 @@ module.exports = {
 
     if (user) {
       if (
-        inputs.record.avatar &&
-        (!user.avatar || user.avatar.dirname !== inputs.record.avatar.dirname)
+        inputs.record.avatar
+        && (!user.avatar || user.avatar.dirname !== inputs.record.avatar.dirname)
       ) {
         const fileManager = sails.hooks['file-manager'].getInstance();
 

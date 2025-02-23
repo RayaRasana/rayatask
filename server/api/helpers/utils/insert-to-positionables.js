@@ -96,9 +96,8 @@ module.exports = {
 
     const beginnings = findBeginnings([...lowers, inputs.position]);
 
-    const repositionsMap =
-      getRepositionsMap([...beginnings, ...uppers]) ||
-      getFullRepositionsMap([...lowers, inputs.position, ...uppers]);
+    const repositionsMap = getRepositionsMap([...beginnings, ...uppers])
+      || getFullRepositionsMap([...lowers, inputs.position, ...uppers]);
 
     const position = repositionsMap[inputs.position]
       ? repositionsMap[inputs.position].pop()

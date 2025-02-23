@@ -57,8 +57,8 @@ module.exports = {
             isPortrait ? 320 : undefined,
             width < 256 || (isPortrait && height < 320)
               ? {
-                  kernel: sharp.kernel.nearest,
-                }
+                kernel: sharp.kernel.nearest,
+              }
               : undefined,
           )
           .toBuffer();

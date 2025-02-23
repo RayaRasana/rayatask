@@ -18,11 +18,11 @@ module.exports = {
     const trelloBoard = JSON.parse(content);
 
     if (
-      !trelloBoard ||
-      !_.isArray(trelloBoard.lists) ||
-      !_.isArray(trelloBoard.cards) ||
-      !_.isArray(trelloBoard.checklists) ||
-      !_.isArray(trelloBoard.actions)
+      !trelloBoard
+      || !_.isArray(trelloBoard.lists)
+      || !_.isArray(trelloBoard.cards)
+      || !_.isArray(trelloBoard.checklists)
+      || !_.isArray(trelloBoard.actions)
     ) {
       throw 'invalidFile';
     }

@@ -11,8 +11,7 @@ module.exports.up = async (knex) => {
   });
 };
 
-module.exports.down = (knex) =>
-  knex.schema.table('board_membership', (table) => {
-    table.dropColumn('role');
-    table.dropColumn('can_comment');
-  });
+module.exports.down = (knex) => knex.schema.table('board_membership', (table) => {
+  table.dropColumn('role');
+  table.dropColumn('can_comment');
+});

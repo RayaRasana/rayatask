@@ -20395,12 +20395,12 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="file"],
 .ui.form input[type="url"] {
   font-family: "IranSansLight", "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  margin: 0em;
+  margin: 1em 0em;
   outline: none;
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   line-height: 1.21428571em;
-  padding: 0.67857143em 1em;
+  padding: 1em 1em;
   text-align: right;
   direction: rtl;
   font-size: 1em;

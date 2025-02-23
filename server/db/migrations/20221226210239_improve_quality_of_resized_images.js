@@ -29,8 +29,8 @@ const processUserAvatar = async (user, userAvatarsPath) => {
         100,
         width < 100 || height < 100
           ? {
-              kernel: sharp.kernel.nearest,
-            }
+            kernel: sharp.kernel.nearest,
+          }
           : undefined,
       )
       .toFile(path.join(rootPath, `square-100.${user.avatar.extension}`));
@@ -63,8 +63,8 @@ const processProjectBackgroundImage = async (project, projectBackgroundImagesPat
         200,
         width < 336 || height < 200
           ? {
-              kernel: sharp.kernel.nearest,
-            }
+            kernel: sharp.kernel.nearest,
+          }
           : undefined,
       )
       .toFile(path.join(rootPath, `cover-336.${project.background_image.extension}`));
@@ -100,8 +100,8 @@ const processAttachmentImage = async (attachment, attachmentsPath) => {
         isPortrait ? 320 : undefined,
         width < 256 || (isPortrait && height < 320)
           ? {
-              kernel: sharp.kernel.nearest,
-            }
+            kernel: sharp.kernel.nearest,
+          }
           : undefined,
       )
       .toFile(path.join(thumbnailsPath, `cover-256.${attachment.image.thumbnailsExtension}`));

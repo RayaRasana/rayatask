@@ -18,6 +18,6 @@ before(function beforeCallback(done) {
   });
 });
 
-after(function afterCallback(done) {
+after((done) => {
   sails.lower(done);
 });

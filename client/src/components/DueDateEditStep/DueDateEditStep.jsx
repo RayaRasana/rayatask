@@ -1,10 +1,11 @@
 import React, {
   useCallback, useEffect, useMemo, useRef,
+  useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import DatePicker from 'react-datepicker';
 import { Button, Form } from 'semantic-ui-react';
+import DateInput from './DateInput';
 import { useDidUpdate, useToggle } from '../../lib/hooks';
 import { Input, Popup } from '../../lib/custom-ui';
 
@@ -15,12 +16,11 @@ import styles from './DueDateEditStep.module.scss';
 
 const DueDateEditStep = React.memo(({
   defaultValue, onUpdate, onBack, onClose,
-
 }) => {
   const [t] = useTranslation();
 
   const [data, handleFieldChange, setData] = useForm(() => {
-    const date = defaultValue || new Date().setHours(12, 0, 0, 0);
+    const date = defaultValue || new Date(new Date().setHours(12, 0, 0, 0) + 24 * 60 * 60 * 1000);
 
     return {
       date: t('format:date', {
@@ -35,11 +35,12 @@ const DueDateEditStep = React.memo(({
   });
 
   const [selectTimeFieldState, selectTimeField] = useToggle();
-
+  const [multiDatePicker, setMultiDatePicker] = useState(null); // Initialize as null
   const dateField = useRef(null);
   const timeField = useRef(null);
 
-  const nullableDate = useMemo(() => {
+  // Parse the date and time from the `data` state
+  const parsedDate = useMemo(() => {
     const date = t('format:date', {
       postProcess: 'parseDate',
       value: data.date,
@@ -52,22 +53,62 @@ const DueDateEditStep = React.memo(({
     return date;
   }, [data.date, t]);
 
-  const handleDatePickerChange = useCallback(
+  const parsedTime = useMemo(() => {
+    const time = t('format:time', {
+      postProcess: 'parseDate',
+      value: data.time,
+    });
+
+    if (Number.isNaN(time.getTime())) {
+      return null;
+    }
+
+    return time;
+  }, [data.time, t]);
+
+  // Synchronize `multiDatePicker` with `data.date` and `data.time`
+  useEffect(() => {
+    if (parsedDate && parsedTime) {
+      const combinedDate = new Date(parsedDate);
+      const hours = parsedTime.getHours();
+      const minutes = parsedTime.getMinutes();
+      const seconds = parsedTime.getSeconds();
+
+      combinedDate.setHours(hours, minutes, seconds);
+      setMultiDatePicker(combinedDate);
+    }
+  }, [parsedDate, parsedTime]);
+
+  // Handle changes from the DateInput component
+  const handleMultiDatePickerChange = useCallback(
     (date) => {
+      setMultiDatePicker(date);
+
+      // Format the date and time
+      const formattedDate = t('format:date', {
+        postProcess: 'formatDate',
+        value: date.toDate(),
+      });
+
+      const formattedTime = t('format:time', {
+        postProcess: 'formatDate',
+        value: date.toDate(),
+      });
+
+      // Update both date and time in the form data
       setData((prevData) => ({
         ...prevData,
-        date: t('format:date', {
-          postProcess: 'formatDate',
-          value: date,
-        }),
+        date: formattedDate,
+        time: formattedTime,
       }));
+
       selectTimeField();
     },
     [setData, selectTimeField, t],
   );
 
   const handleSubmit = useCallback(() => {
-    if (!nullableDate) {
+    if (!parsedDate) {
       dateField.current.select();
       return;
     }
@@ -78,7 +119,7 @@ const DueDateEditStep = React.memo(({
     });
 
     if (Number.isNaN(value.getTime())) {
-      value = parseTime(data.time, nullableDate);
+      value = parseTime(data.time, parsedDate);
 
       if (Number.isNaN(value.getTime())) {
         timeField.current.select();
@@ -91,7 +132,7 @@ const DueDateEditStep = React.memo(({
     }
 
     onClose();
-  }, [defaultValue, onUpdate, onClose, data, nullableDate, t]);
+  }, [defaultValue, onUpdate, onClose, data, parsedDate, t]);
 
   const handleClearClick = useCallback(() => {
     if (defaultValue) {
@@ -108,6 +149,10 @@ const DueDateEditStep = React.memo(({
   useDidUpdate(() => {
     timeField.current.select();
   }, [selectTimeFieldState]);
+
+  useEffect(() => {
+    console.log(multiDatePicker?.toDate?.().toString());
+  }, [multiDatePicker]);
 
   return (
     <>
@@ -128,12 +173,7 @@ const DueDateEditStep = React.memo(({
               <Input ref={timeField} name="time" value={data.time} onChange={handleFieldChange} />
             </div>
           </div>
-          <DatePicker
-            inline
-            disabledKeyboardNavigation
-            selected={nullableDate}
-            onChange={handleDatePickerChange}
-          />
+          <DateInput value={multiDatePicker} setValue={handleMultiDatePickerChange} />
           <Button positive content={t('action.save')} />
         </Form>
         <Button

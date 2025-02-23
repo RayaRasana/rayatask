@@ -12,7 +12,6 @@ module.exports.up = async (knex) => {
     .whereNotNull('due_date');
 };
 
-module.exports.down = (knex) =>
-  knex.schema.table('card', (table) => {
-    table.dropColumn('is_due_date_completed');
-  });
+module.exports.down = (knex) => knex.schema.table('card', (table) => {
+  table.dropColumn('is_due_date_completed');
+});

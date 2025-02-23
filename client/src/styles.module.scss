@@ -16,6 +16,18 @@
       width: 100%;
     }
 
+    .rmdp-container{
+      width: 100%;
+    }
+
+    .rmdp-time-picker{
+      width:200px !important;
+      > div > input{
+        width: 60px;
+        text-align: center;
+      }
+    }
+
     .react-datepicker__current-month,
     .react-datepicker-time__header {
       color: #444;

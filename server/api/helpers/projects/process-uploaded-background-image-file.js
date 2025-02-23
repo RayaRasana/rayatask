@@ -57,8 +57,8 @@ module.exports = {
           200,
           width < 336 || height < 200
             ? {
-                kernel: sharp.kernel.nearest,
-              }
+              kernel: sharp.kernel.nearest,
+            }
             : undefined,
         )
         .toBuffer();

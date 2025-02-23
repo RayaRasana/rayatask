@@ -1,5 +1,4 @@
-const buildSendMessageApiUrl = (telegramBotToken) =>
-  `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+const buildSendMessageApiUrl = (telegramBotToken) => `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
 
 module.exports = {
   inputs: {

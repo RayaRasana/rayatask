@@ -54,8 +54,8 @@ module.exports = {
       } catch (error) {
         let errorText;
         if (
-          error instanceof SyntaxError &&
-          error.message.includes('Unexpected token e in JSON at position 0')
+          error instanceof SyntaxError
+          && error.message.includes('Unexpected token e in JSON at position 0')
         ) {
           errorText = 'response is signed';
         } else {
@@ -68,8 +68,8 @@ module.exports = {
     }
 
     if (
-      !claims[sails.config.custom.oidcEmailAttribute] ||
-      !claims[sails.config.custom.oidcNameAttribute]
+      !claims[sails.config.custom.oidcEmailAttribute]
+      || !claims[sails.config.custom.oidcNameAttribute]
     ) {
       throw 'missingValues';
     }

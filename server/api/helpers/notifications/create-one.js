@@ -22,10 +22,10 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser)
       emailData = {
         subject: `${actorUser.name} moved ${card.name} from ${action.data.fromList.name} to ${action.data.toList.name} on ${board.name}`,
         html:
-          `<p>${actorUser.name} moved ` +
-          `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> ` +
-          `from ${action.data.fromList.name} to ${action.data.toList.name} ` +
-          `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>`,
+          `<p>${actorUser.name} moved `
+          + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
+          + `from ${action.data.fromList.name} to ${action.data.toList.name} `
+          + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>`,
       };
 
       break;
@@ -33,10 +33,10 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser)
       emailData = {
         subject: `${actorUser.name} left a new comment to ${card.name} on ${board.name}`,
         html:
-          `<p>${actorUser.name} left a new comment to ` +
-          `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> ` +
-          `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>` +
-          `<p>${action.data.text}</p>`,
+          `<p>${actorUser.name} left a new comment to `
+          + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
+          + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>`
+          + `<p>${action.data.text}</p>`,
       };
 
       break;

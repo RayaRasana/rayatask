@@ -33,7 +33,9 @@ module.exports = {
       .intercept('pathNotFound', () => Errors.ATTACHMENT_NOT_FOUND);
 
     let { attachment } = path;
-    const { card, list, board, project } = path;
+    const {
+      card, list, board, project,
+    } = path;
 
     const boardMembership = await BoardMembership.findOne({
       boardId: board.id,

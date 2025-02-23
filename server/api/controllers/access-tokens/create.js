@@ -19,10 +19,9 @@ const Errors = {
   },
 };
 
-const emailOrUsernameValidator = (value) =>
-  value.includes('@')
-    ? validator.isEmail(value)
-    : value.length >= 3 && value.length <= 16 && /^[a-zA-Z0-9]+((_|\.)?[a-zA-Z0-9])*$/.test(value);
+const emailOrUsernameValidator = (value) => (value.includes('@')
+  ? validator.isEmail(value)
+  : value.length >= 3 && value.length <= 16 && /^[a-zA-Z0-9]+((_|\.)?[a-zA-Z0-9])*$/.test(value));
 
 module.exports = {
   inputs: {

@@ -7,7 +7,7 @@
   }
 
   .fieldBox {
-    display: inline-block;
+    display: none;
     margin: 0 4px 12px;
     width: calc(50% - 8px);
   }
@@ -23,4 +23,5 @@
     padding-bottom: 4px;
     padding-left: 2px;
   }
+
 }

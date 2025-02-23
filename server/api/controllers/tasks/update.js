@@ -43,7 +43,9 @@ module.exports = {
       .intercept('pathNotFound', () => Errors.TASK_NOT_FOUND);
 
     let { task } = path;
-    const { card, list, board, project } = path;
+    const {
+      card, list, board, project,
+    } = path;
 
     const boardMembership = await BoardMembership.findOne({
       boardId: board.id,
