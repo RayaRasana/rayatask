@@ -18,7 +18,7 @@ const truncateString = (string, maxLength = 30) => (string.length > maxLength ? 
 
 const buildAndSendMarkdownMessage = async (card, action, actorUser, send) => {
   const cardLink = `<${sails.config.custom.baseUrl}/cards/${card.id}|${card.name}>`;
-
+  console.log(action);
   let markdown;
   switch (action.type) {
     case Action.Types.CREATE_CARD:
@@ -32,6 +32,10 @@ const buildAndSendMarkdownMessage = async (card, action, actorUser, send) => {
     case Action.Types.COMMENT_CARD:
       // TODO: truncate text?
       markdown = `*${actorUser.name}* commented on ${cardLink}:\n>${action.data.text}`;
+
+      break;
+    case Action.Types.USER_TO_CARD_ADD:
+      markdown = `${actorUser.name} has been assigned to cart ${cardLink}`;
 
       break;
     default:
@@ -59,6 +63,12 @@ const buildAndSendHtmlMessage = async (card, action, actorUser, send) => {
 
       break;
     }
+
+    case Action.Types.USER_TO_CARD_ADD:
+      html = `<b>${actorUser.name}</b> has been assigned to <b>${cardLink}</b>`;
+
+      break;
+
     default:
       return;
   }
@@ -92,7 +102,7 @@ module.exports = {
 
   async fn(inputs) {
     const { values } = inputs;
-
+    // console.log(inputs);
     const action = await Action.create({
       ...values,
       cardId: values.card.id,

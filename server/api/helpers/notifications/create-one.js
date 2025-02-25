@@ -1,3 +1,5 @@
+const Action = require("../../models/Action");
+
 const valuesValidator = (value) => {
   if (!_.isPlainObject(value)) {
     return false;
@@ -16,6 +18,8 @@ const valuesValidator = (value) => {
 
 // TODO: use templates (views) to build html
 const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser) => {
+  console.log(action);
+  console.log(Action.Types);
   let emailData;
   switch (action.type) {
     case Action.Types.MOVE_CARD:
@@ -40,7 +44,29 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser)
       };
 
       break;
+    case Action.Types.CREATE_CARD:
+      emailData = {
+        subject: `${actorUser.name} created a new card named ${card.name} on ${board.name}`,
+        html:
+          `<p>${actorUser.name} created a new card named `
+          + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
+          + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>`
+          + `<p>${action.data.text}</p>`,
+      };
+      break;
+    case Action.Types.USER_TO_CARD_ADD:
+      console.log("Finally");
+      emailData = {
+        subject: `${actorUser.name} has been assigned to ${card.name} on ${board.name}`,
+        html:
+          `<p>${actorUser.name} has been assigned to `
+          + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
+          + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>`
+          + `<p>${action.data.text}</p>`,
+      };
+      break;
     default:
+      console.log("DEFAULT");
       return;
   }
 
@@ -80,6 +106,7 @@ module.exports = {
   },
 
   async fn(inputs) {
+    // console.log("HEY");
     const { values } = inputs;
 
     if (values.user) {

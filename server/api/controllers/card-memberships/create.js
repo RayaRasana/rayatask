@@ -70,6 +70,12 @@ module.exports = {
       throw Errors.USER_NOT_FOUND;
     }
 
+    // Fetch the user object to pass to the action
+    const userToAdd = await User.findOne({ id: inputs.userId });
+    if (!userToAdd) {
+      throw Errors.USER_NOT_FOUND;
+    }
+    
     const cardMembership = await sails.helpers.cardMemberships.createOne
       .with({
         project,
@@ -84,8 +90,41 @@ module.exports = {
       })
       .intercept('userAlreadyCardMember', () => Errors.USER_ALREADY_CARD_MEMBER);
 
+      await sails.helpers.actions.createOne.with({
+        project,
+        board,
+        list,
+        values: {
+          card,
+          user: userToAdd, // Pass the user object instead of the ID
+          type: Action.Types.USER_TO_CARD_ADD,
+          data: {
+            what: "the fuck"
+          },
+        },
+        request: this.req,
+      });
+
     return {
       item: cardMembership,
     };
+
+    // const action = await sails.helpers.actions.createOne.with({
+    //   project,
+    //   board,
+    //   list,
+    //   values: {
+    //     type: Action.Types.USER_TO_CARD_ADD,
+    //     data: {
+    //     },
+    //     card,
+    //     user: currentUser,
+    //   },
+    //   request: this.req,
+    // });
+
+    // return {
+    //   item: action,
+    // };
   },
 };

@@ -82,7 +82,7 @@ module.exports = {
       },
       user: inputs.actorUser,
     });
-
+    
     const cardSubscription = await CardSubscription.create({
       cardId: cardMembership.cardId,
       userId: cardMembership.userId,
