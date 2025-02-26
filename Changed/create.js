@@ -99,7 +99,7 @@ module.exports = {
           user: userToAdd, // Pass the user object instead of the ID
           type: Action.Types.USER_TO_CARD_ADD,
           data: {
-            
+            what: "the fuck"
           },
         },
         request: this.req,

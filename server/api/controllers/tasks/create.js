@@ -38,7 +38,6 @@ module.exports = {
 
   async fn(inputs) {
     const { currentUser } = this.req;
-
     const {
       card, list, board, project,
     } = await sails.helpers.cards
@@ -71,6 +70,24 @@ module.exports = {
       actorUser: currentUser,
       request: this.req,
     });
+
+    await sails.helpers.actions.createOne.with({
+      project,
+      board,
+      list,
+      values: {
+        card,
+        user: currentUser, // Pass the user object instead of the ID
+        type: Action.Types.CREATE_TASK,
+        data: {
+          taskName : inputs.name,
+        },
+      },
+      request: this.req,
+    });
+
+    
+
 
     return {
       item: task,

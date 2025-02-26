@@ -31,7 +31,7 @@ exports.seed = async (knex) => {
     await knex('user_account').insert({
       ...data,
       email,
-      subscribeToOwnCards: false,
+      subscribeToOwnCards: true,
       createdAt: new Date().toISOString(),
     });
   } catch (error) {

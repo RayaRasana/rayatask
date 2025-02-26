@@ -150,10 +150,6 @@ const DueDateEditStep = React.memo(({
     timeField.current.select();
   }, [selectTimeFieldState]);
 
-  useEffect(() => {
-    console.log(multiDatePicker?.toDate?.().toString());
-  }, [multiDatePicker]);
-
   return (
     <>
       <Popup.Header onBack={onBack}>

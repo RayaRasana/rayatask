@@ -73,7 +73,7 @@ module.exports = {
     },
     subscribeToOwnCards: {
       type: 'boolean',
-      defaultsTo: false,
+      defaultsTo: true,
       columnName: 'subscribe_to_own_cards',
     },
     deletedAt: {

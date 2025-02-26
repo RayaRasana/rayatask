@@ -37,7 +37,7 @@ module.exports = {
 
   async fn(inputs) {
     const { currentUser } = this.req;
-
+    
     const path = await sails.helpers.tasks
       .getProjectPath(inputs.id)
       .intercept('pathNotFound', () => Errors.TASK_NOT_FOUND);
@@ -76,6 +76,23 @@ module.exports = {
     if (!task) {
       throw Errors.TASK_NOT_FOUND;
     }
+
+    await sails.helpers.actions.createOne.with({
+      project,
+      board,
+      list,
+      values: {
+        record: task,
+        card,
+        user: currentUser, // Pass the user object instead of the ID
+        type: Action.Types.UPDATE_TASK,
+        data: {
+          taskName : task.name,
+        },
+      },
+      request: this.req,
+    });
+
 
     return {
       item: task,

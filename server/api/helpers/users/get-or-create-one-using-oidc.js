@@ -91,7 +91,7 @@ module.exports = {
       email: claims[sails.config.custom.oidcEmailAttribute],
       isSso: true,
       name: claims[sails.config.custom.oidcNameAttribute],
-      subscribeToOwnCards: false,
+      subscribeToOwnCards: true,
     };
     if (!sails.config.custom.oidcIgnoreUsername) {
       values.username = claims[sails.config.custom.oidcUsernameAttribute];

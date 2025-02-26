@@ -20,6 +20,4 @@ export const ActivityTypes = {
   MOVE_CARD: 'moveCard',
   COMMENT_CARD: 'commentCard',
   USER_TO_CARD_ADD: 'userToCardAdd',
-  CREATE_TASK: 'createTask',
-  UPDATE_TASK: 'updateTask',
 };

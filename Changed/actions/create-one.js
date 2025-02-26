@@ -35,15 +35,7 @@ const buildAndSendMarkdownMessage = async (card, action, actorUser, send) => {
 
       break;
     case Action.Types.USER_TO_CARD_ADD:
-      markdown = `New Task ${actorUser.name} ${cardLink}`;
-
-      break;
-    case Action.Types.CREATE_TASK:
-      markdown = `New task titled has been created by ${actorUser.name} ${cardLink}`;
-
-      break;
-    case Action.Types.UPDATE_TASK:
-      markdown = `Task titled </b>task title</b> status has been set to done by ${actorUser.name} in ${cardLink}`;
+      markdown = `${actorUser.name} has been assigned to cart ${cardLink}`;
 
       break;
     default:
@@ -66,24 +58,17 @@ const buildAndSendHtmlMessage = async (card, action, actorUser, send) => {
       html = `${cardLink} was moved by ${actorUser.name} to <b>${action.data.toList.name}</b>`;
 
       break;
-    case Action.Types.COMMENT_CARD:
+    case Action.Types.COMMENT_CARD: {
       html = `<b>${actorUser.name}</b> commented on ${cardLink}:\n<i>${truncateString(action.data.text)}</i>`;
 
       break;
+    }
 
     case Action.Types.USER_TO_CARD_ADD:
       html = `<b>${actorUser.name}</b> has been assigned to <b>${cardLink}</b>`;
 
       break;
 
-    case Action.Types.CREATE_TASK:
-      html = `A new task has been created in ${cardLink}</b>`;
-
-      break;
-    case Action.Types.UPDATE_TASK:
-      html = `Task titled </b>task title</b> status has been set to done by ${actorUser.name} in ${cardLink}`;
-  
-        break;
     default:
       return;
   }
@@ -117,14 +102,13 @@ module.exports = {
 
   async fn(inputs) {
     const { values } = inputs;
-    // console.log(inputs.values);
+    // console.log(inputs);
     const action = await Action.create({
       ...values,
       cardId: values.card.id,
       userId: values.user.id,
     }).fetch();
 
-    // console.log(action);
     sails.sockets.broadcast(
       `board:${values.card.boardId}`,
       'actionCreate',
@@ -152,44 +136,21 @@ module.exports = {
       action.cardId,
       action.userId,
     );
-    
-    if (inputs.values.type === "userToCardAdd") {
-      subscriptionUserIds.push(inputs.values.user.id);
-    }
 
-    if (inputs.values.type === "updateTask") {
-      await Promise.all(
-        subscriptionUserIds.map(async (userId) => sails.helpers.notifications.createOne.with({
-          values: {
-            userId,
-            action,
-            values,
-          },
-          project: inputs.project,
-          board: inputs.board,
-          list: inputs.list,
-          card: values.card,
-          actorUser: values.user,
+    await Promise.all(
+      subscriptionUserIds.map(async (userId) => sails.helpers.notifications.createOne.with({
+        values: {
+          userId,
+          action,
+        },
+        project: inputs.project,
+        board: inputs.board,
+        list: inputs.list,
+        card: values.card,
+        actorUser: values.user,
+      })),
+    );
 
-        })),
-      ); 
-    } else {
-    
-      await Promise.all(
-        subscriptionUserIds.map(async (userId) => sails.helpers.notifications.createOne.with({
-          values: {
-            userId,
-            action,
-          },
-          project: inputs.project,
-          board: inputs.board,
-          list: inputs.list,
-          card: values.card,
-          actorUser: values.user,
-        })),
-      );
-
-    }
     if (sails.config.custom.slackBotToken) {
       buildAndSendMarkdownMessage(
         values.card,
