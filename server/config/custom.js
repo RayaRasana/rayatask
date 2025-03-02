@@ -67,7 +67,7 @@ module.exports.custom = {
 
   // TODO: move client base url to environment variable?
   oidcRedirectUri: `${
-    sails.config.environment === 'production' ? process.env.BASE_URL : 'http://localhost:3000'
+    sails.config.environment === 'production' ? process.env.BASE_URL : 'http://85.9.109.23:3000'
   }/oidc-callback`,
 
   smtpHost: process.env.SMTP_HOST,

@@ -1,6 +1,6 @@
 const http = require('http');
 const options = {
-    host: 'localhost',
+    host: '85.9.109.23',
     port: 1337,
     timeout: 2000
 };

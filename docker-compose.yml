@@ -11,7 +11,7 @@ services:
     ports:
       - 3000:1337
     environment:
-      - BASE_URL=http://localhost:3000
+      - BASE_URL=http://85.9.109.23:3000
       - DATABASE_URL=postgresql://postgres@postgres/planka
       - SECRET_KEY=notsecretkey
 
@@ -72,7 +72,7 @@ services:
       # Optional fields: accessToken, events, excludedEvents
       # - |
       #   WEBHOOKS=[{
-      #     "url": "http://localhost:3001",
+      #     "url": "http://85.9.109.23:3001",
       #     "accessToken": "notaccesstoken",
       #     "events": ["cardCreate", "cardUpdate", "cardDelete"],
       #     "excludedEvents": ["notificationCreate", "notificationUpdate"]
