@@ -164,6 +164,10 @@ export default {
       userActions_title: 'اقدامات کاربر',
       userAddedThisCardToList: '<0>{{user}}</0><1> این کارت را به {{list}} اضافه کرد</1>',
       userLeftNewCommentToCard: '{{user}} نظر جدید «{{comment}}» را به <2>{{card}}</2> اضافه کرد',
+      userAddedToCard: '{{adder}}, «{{user}}» را به کارت {{card}} اضافه کرد.',
+      updateTaskDone: '{{user}} وضعیت تسک «{{taskName}}» را به انجام شده تغییر داد.',
+      updateTaskUndone: '{{user}} وضعیت تسک «{{taskName}}» را به انجام نشده تغییر داد.',
+      createTask: '{{user}} تسک جدیدی با نام «{{taskName}}» را در {{card}} ایجاد کرد.',
       userMovedCardFromListToList:
         '{{user}} <2>{{card}}</2> را از {{fromList}} به {{toList}} منتقل کرد',
       userMovedThisCardFromListToList:

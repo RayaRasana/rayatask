@@ -29,7 +29,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
           + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
           + `from ${action.data.fromList.name} to ${action.data.toList.name} `
           + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>
-          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
           </div>`,
       };
 
@@ -43,7 +43,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
           + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
           + `در برد <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a> قرار داد.</p>`
           + `<p></p>
-          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
           </div>`,
       };
 
@@ -57,7 +57,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
           + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> در برد `
           + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a>ایجاد کرد.</p>`
           + `<p></p>
-          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
           </div>`,
       };
       break;
@@ -70,7 +70,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
           + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
           + `در <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a> اضافه شد.</p>`
           + `<p></p>
-          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
           </div>`,
       };
       break;
@@ -80,7 +80,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
         html:
           `<div style="width: calc(80% - 2px); height: 90%; border-radius: 10px; border:1px solid #999; margin: 5% 0%; padding: 20px 10% 10px 10%; background: linear-gradient(45deg,transparent 14%, #f2f2f2 15%,#f2f2f2  20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #f2f2f2 15%, #f2f2f2 20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%), radial-gradient(transparent 14%, #f2f2f2 15%, #f2f2f2 25%, transparent 26%); background-size: 1em 1em; background-color: #ffffff; opacity: 1;color: black; direction: rtl; text-align: right; font-size: 0.9rem;" >
           <p>${actorUser.name} تسک جدیدی را با عنوان ${action.data.taskName} بر روی کارت <a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> قرار داد.</p>
-          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+          <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
           </div>`
           ,
       };
@@ -91,7 +91,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
         subject: `${actorUser.name} تسک ${action.data.taskName} را به انجام شده تغییر داد.`,
         html: `<div style="width: calc(80% - 2px); height: 90%; border-radius: 10px; border:1px solid #999; margin: 5% 0%; padding: 20px 10% 10px 10%; background: linear-gradient(45deg,transparent 14%, #f2f2f2 15%,#f2f2f2  20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #f2f2f2 15%, #f2f2f2 20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%), radial-gradient(transparent 14%, #f2f2f2 15%, #f2f2f2 25%, transparent 26%); background-size: 1em 1em; background-color: #ffffff; opacity: 1;color: black; direction: rtl; text-align: right; font-size: 0.9rem;" >
                 <p>وضعیت تسک <b>${action.data.taskName}</b> در کارت <a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> توسط <b>${actorUser.name}</b> به انجام شده تغییر پیدا کرد.</p>
-                <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+                <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
               </div>`,
       }
       ):(
@@ -99,7 +99,7 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
           subject: `${actorUser.name} وضعیت تسک ${action.data.taskName} را به انجام نشده تغییر داد.`,
           html: `<div style="width: calc(80% - 2px); height: 90%; border-radius: 10px; border:1px solid #999; margin: 5% 0%; padding: 20px 10% 10px 10%; background: linear-gradient(45deg,transparent 14%, #f2f2f2 15%,#f2f2f2  20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #f2f2f2 15%, #f2f2f2 20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%), radial-gradient(transparent 14%, #f2f2f2 15%, #f2f2f2 25%, transparent 26%); background-size: 1em 1em; background-color: #ffffff; opacity: 1;color: black; direction: rtl; text-align: right; font-size: 0.9rem;" >
                 <p>وضعیت تسک <b>${action.data.taskName}</b> در کارت <a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> توسط <b>${actorUser.name}</b> به انجام نشده تغییر پیدا کرد.</p>
-                <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">برگرفته از توان <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a></span>
+                <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
               </div>`,
       })
       break;

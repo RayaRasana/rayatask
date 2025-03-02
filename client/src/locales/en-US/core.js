@@ -160,6 +160,10 @@ export default {
       userActions_title: 'User Actions',
       userAddedThisCardToList: '<0>{{user}}</0><1> added this card to {{list}}</1>',
       userLeftNewCommentToCard: '{{user}} left a new comment «{{comment}}» to <2>{{card}}</2>',
+      userAddedToCard: '{{adder}} added «{{user}}» to <2>{{card}}</2>',
+      updateTaskDone: '{{user}}  has changed the status of task «{{taskName}}» to <2>done</2>',
+      updateTaskUndone: '{{user}}  has changed the status of task «{{taskName}}» to <2>undone</2>',
+      createTask: '{{user}} added a new task <2>«{{taskName}}»</2> in {{card}}',
       userMovedCardFromListToList: '{{user}} moved <2>{{card}}</2> from {{fromList}} to {{toList}}',
       userMovedThisCardFromListToList:
         '<0>{{user}}</0><1> moved this card from {{fromList}} to {{toList}}</1>',

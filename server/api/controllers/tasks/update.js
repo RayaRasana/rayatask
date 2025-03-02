@@ -88,6 +88,8 @@ module.exports = {
         type: Action.Types.UPDATE_TASK,
         data: {
           taskName : task.name,
+          isCompleted: inputs.isCompleted,
+
         },
       },
       request: this.req,

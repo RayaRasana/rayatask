@@ -73,6 +73,73 @@ const NotificationsStep = React.memo(({ items, onDelete, onClose }) => {
             </Trans>
           );
         }
+        case ActivityTypes.USER_TO_CARD_ADD: {
+          return (
+            <Trans
+              i18nKey="common.userAddedToCard"
+              values={{
+                adder: activity.data.adderUser,
+                user: activity.user.name,
+                card: card.name,
+              }}
+            >
+              {activity.data.adderUser}
+              {` added «${activity.user.name}» to `}
+              <Link to={Paths.CARDS.replace(':id', card.id)} onClick={onClose}>
+                {card.name}
+              </Link>
+            </Trans>
+          );
+        }
+        case ActivityTypes.UPDATE_TASK: {
+          if (activity.data.isCompleted) {
+            return (
+              <Trans
+                i18nKey="common.updateTaskDone"
+                values={{
+                  taskName: activity.data.taskName,
+                  user: activity.user.name,
+                }}
+              >
+                {activity.user.name}
+                {` has changed the status of task «${activity.data.taskName}» to done`}
+              </Trans>
+            );
+          } else {
+            return (
+              <Trans
+                i18nKey="common.updateTaskUndone"
+                values={{
+                  taskName: activity.data.taskName,
+                  user: activity.user.name,
+                }}
+              >
+                {activity.user.name}
+                {` has changed the status of task «${activity.data.taskName}» to undone`}
+              </Trans>
+            );
+          }
+        }
+        case ActivityTypes.CREATE_TASK: {
+          return (
+            <Trans
+              i18nKey="common.createTask"
+              values={{
+                taskName: activity.data.taskName,
+                user: activity.user.name,
+                card: card.name,
+              }}
+            >
+              {activity.user.name}
+              {' added a new task '}
+              {activity.data.taskName}
+              `in card`
+              <Link to={Paths.CARDS.replace(':id', card.id)} onClick={onClose}>
+                {card.name}
+              </Link>
+            </Trans>
+          );
+        }
         default:
       }
 

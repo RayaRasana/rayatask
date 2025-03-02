@@ -10,6 +10,8 @@
  */
 
 module.exports.sockets = {
+
+  onlyAllowOrigins: false,
   /**
    *
    * `transports`

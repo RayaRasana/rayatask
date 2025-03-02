@@ -36,7 +36,6 @@
     font-size: 14px;
     line-height: 20px;
     vertical-align: top;
-    float: right;
   }
 
   .list {
@@ -52,5 +51,6 @@
 
   .wrapper {
     margin: 0 20px;
+    direction: rtl;
   }
 }

@@ -44,6 +44,7 @@ module.exports = {
 
   async fn(inputs) {
     const { currentUser } = this.req;
+    console.log(currentUser);
 
     const {
       card, list, board, project,
@@ -99,7 +100,7 @@ module.exports = {
           user: userToAdd, // Pass the user object instead of the ID
           type: Action.Types.USER_TO_CARD_ADD,
           data: {
-            
+            adderUser: currentUser.name,
           },
         },
         request: this.req,
@@ -109,22 +110,5 @@ module.exports = {
       item: cardMembership,
     };
 
-    // const action = await sails.helpers.actions.createOne.with({
-    //   project,
-    //   board,
-    //   list,
-    //   values: {
-    //     type: Action.Types.USER_TO_CARD_ADD,
-    //     data: {
-    //     },
-    //     card,
-    //     user: currentUser,
-    //   },
-    //   request: this.req,
-    // });
-
-    // return {
-    //   item: action,
-    // };
   },
 };
