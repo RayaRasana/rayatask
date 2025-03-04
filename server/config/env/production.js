@@ -169,7 +169,7 @@ module.exports = {
      */
 
     // adapter: '@sailshq/connect-redis',
-    // url: 'redis://user:password@85.9.109.23:6379/databasenumber',
+    // url: 'redis://user:password@192.168.10.112:6379/databasenumber',
 
     /**
      *

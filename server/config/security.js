@@ -29,7 +29,7 @@ module.exports.security = {
 
   cors: {
     allRoutes: true,
-    allowOrigins: ['http://85.9.109.23:3000'],
+    allowOrigins: ['http://192.168.10.112:3000'],
     allowRequestHeaders: ['Authorization'],
     allowCredentials: true,
   },

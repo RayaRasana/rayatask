@@ -11,7 +11,7 @@
 
 module.exports.sockets = {
 
-  onlyAllowOrigins: false,
+  // onlyAllowOrigins: false,
   /**
    *
    * `transports`
