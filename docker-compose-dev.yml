@@ -65,7 +65,7 @@ services:
       # Optional fields: accessToken, events, excludedEvents
       # - |
       #   WEBHOOKS=[{
-      #     "url": "http://192.168.10.112:3001",
+      #     "url": "http://85.9.109.23:3001",
       #     "accessToken": "notaccesstoken",
       #     "events": ["cardCreate", "cardUpdate", "cardDelete"],
       #     "excludedEvents": ["notificationCreate", "notificationUpdate"]
@@ -96,8 +96,8 @@ services:
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
-      - BASE_URL=http://192.168.10.112:3000
-      - REACT_APP_SERVER_BASE_URL=http://192.168.10.112:3000
+      - BASE_URL=http://85.9.109.23:3000
+      - REACT_APP_SERVER_BASE_URL=http://85.9.109.23:3000
     working_dir: /app/client
     command: npm start
 
