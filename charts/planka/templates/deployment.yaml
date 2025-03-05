@@ -105,7 +105,7 @@ spec:
               {{- else if .Values.ingress.enabled }}
               value: {{ printf "https://%s" (first .Values.ingress.hosts).host }}
               {{- else }}
-              value: http://192.168.10.112:3000
+              value: http://85.9.109.23:3000
               {{- end }}
             - name: SECRET_KEY
               {{- if .Values.existingSecretkeySecret }}

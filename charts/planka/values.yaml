@@ -28,7 +28,7 @@ existingSecretkeySecret: ""
 existingAdminCredsSecret: ""
 
 # Base url for Planka. Will override `ingress.hosts[0].host`
-# Defaults to `http://192.168.10.112:3000` if ingress is disabled.
+# Defaults to `http://85.9.109.23:3000` if ingress is disabled.
 baseUrl: ""
 
 serviceAccount:
