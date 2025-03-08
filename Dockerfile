@@ -25,7 +25,8 @@ COPY client/package.json client/package-lock.json ./
 RUN npm install npm --global \
   && npm install pnpm --global \
   && pnpm import \
-  && pnpm install --prod
+  && pnpm install --prod \
+  && npm install react-date-object
 
 COPY client .
 RUN DISABLE_ESLINT_PLUGIN=true npm run build
