@@ -14,7 +14,8 @@ COPY server/package.json server/package-lock.json ./
 RUN npm install npm --global \
   && npm install pnpm --global \
   && pnpm import \
-  && pnpm install --prod
+  && pnpm install --prod \
+  && npm install bcrypt
 
 FROM node:lts AS client
 
