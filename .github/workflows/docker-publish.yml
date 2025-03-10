@@ -31,5 +31,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/ba4b0d/rayatask-arm:latest
+          tags: ghcr.io/rayatask/rayatask-arm:latest
           platforms: linux/amd64,linux/arm64
