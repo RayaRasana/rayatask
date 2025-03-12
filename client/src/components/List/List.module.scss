@@ -71,7 +71,7 @@
 
   .header {
     outline: none;
-    padding: 6px 36px 4px 8px;
+    padding: 6px 8px 4px 36px;
     position: relative;
 
     &:hover .target {
@@ -98,7 +98,7 @@
     opacity: 0;
     padding: 0;
     position: absolute;
-    right: 2px;
+    left: 2px;
     top: 2px;
     width: 32px;
 

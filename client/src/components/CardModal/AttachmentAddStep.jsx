@@ -33,6 +33,11 @@ const AttachmentAddStep = React.memo(({ onCreate, onClose }) => {
               {t('common.fromComputer', {
                 context: 'title',
               })}
+              <span>
+                {t('common.fromComputer', {
+                  context: 'limit',
+                })}
+              </span>
             </Menu.Item>
           </FilePicker>
         </Menu>

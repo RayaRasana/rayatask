@@ -109,13 +109,23 @@ const Board = React.memo(
       document.body.classList.remove(globalStyles.dragScrolling);
     }, [prevPosition]);
 
+    // useEffect(() => {
+    //   document.body.style.overflowX = 'auto';
+
+    //   return () => {
+    //     document.body.style.overflowX = null;
+    //   };
+    // }, []);
+
     useEffect(() => {
       document.body.style.overflowX = 'auto';
-
+      window.scrollTo({ left: document.body.scrollWidth, behavior: 'instant' });
+    
       return () => {
         document.body.style.overflowX = null;
       };
     }, []);
+    
 
     useEffect(() => {
       if (isListAddOpened) {
