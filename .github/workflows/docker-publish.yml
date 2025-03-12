@@ -1,8 +1,9 @@
-name: Publish Docker image to GitHub Container Registry
+name: Publish Docker image to GHCR
 
 on:
   push:
-    branches: [ main ]
+    tags:
+      - 'v*'  
 
 jobs:
   build-and-push:
@@ -13,7 +14,7 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
@@ -26,10 +27,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Extract version from Git tag
+        id: extract_tag
+        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+
       - name: Build and push multi-arch Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ghcr.io/rayarasana/rayatask-multidev:latest
+          tags: |
+            ghcr.io/rayarasana/rayatask-multidev:${{ steps.extract_tag.outputs.TAG }}
+            ghcr.io/rayarasana/rayatask-multidev:latest
           platforms: linux/amd64,linux/arm64
