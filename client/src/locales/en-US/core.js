@@ -97,6 +97,7 @@ export default {
       filterByLabels_title: 'Filter By Labels',
       filterByMembers_title: 'Filter By Members',
       fromComputer_title: 'From Computer',
+      fromComputer_limit: '(Max Size: 4MB)',
       fromTrello: 'From Trello',
       general: 'General',
       hours: 'Hours',

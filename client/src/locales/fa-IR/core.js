@@ -102,6 +102,7 @@ export default {
       filterByLabels_title: 'فیلتر بر اساس برچسب‌ها',
       filterByMembers_title: 'فیلتر بر اساس اعضا',
       fromComputer_title: 'از کامپیوتر',
+      fromComputer_limit: '(محدودیت حجم:‌۴ مگابایت)',
       fromTrello: 'از Trello',
       general: 'عمومی',
       hours: 'ساعت‌ها',

@@ -25,10 +25,10 @@ const buildAndSendEmail = async (board, card, action, actorUser, notifiableUser,
         subject: `${actorUser.name} کارت ${card.name} را از لیست ${action.data.fromList.name} به لیست ${action.data.toList.name} در برد ${board.name} انتقال داد.`,
         html:
           `<div style="width: calc(80% - 2px); height: 90%; border-radius: 10px; border:1px solid #999; margin: 5% 0%; padding: 20px 10% 10px 10%; background: linear-gradient(45deg,transparent 14%, #f2f2f2 15%,#f2f2f2  20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%),linear-gradient(135deg,transparent 14%, #f2f2f2 15%, #f2f2f2 20%, transparent 21%, transparent 79%, #f2f2f2  80%, #f2f2f2 85%, transparent 86%), radial-gradient(transparent 14%, #f2f2f2 15%, #f2f2f2 25%, transparent 26%); background-size: 1em 1em; background-color: #ffffff; opacity: 1;color: black; direction: rtl; text-align: right; font-size: 0.9rem;" >
-          <p>${actorUser.name} moved `
+          <p>${actorUser.name} کارت `
           + `<a href="${process.env.BASE_URL}/cards/${card.id}">${card.name}</a> `
-          + `from ${action.data.fromList.name} to ${action.data.toList.name} `
-          + `on <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a></p>
+          + `را از لیست ${action.data.fromList.name} به لیست ${action.data.toList.name} `
+          + `در برد <a href="${process.env.BASE_URL}/boards/${board.id}">${board.name}</a> انتقال داد.</p>
           <span style="display: block; margin-top: 20px ;width: 100%; color: #777; font-size: 0.6rem; text-align: center;height:20px; line-height: 20px; text-decoration: none">تمامی حقوق مادی و معنوی رایاتسک متعلق به <a style="color: rgb(68, 60, 168);" href="https://rayarasana.com">رایارسانا</a> است.</span>
           </div>`,
       };

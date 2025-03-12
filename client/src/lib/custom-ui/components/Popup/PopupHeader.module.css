@@ -1,7 +1,8 @@
 .backButton {
   background: transparent !important;
   box-shadow: none !important;
-  left: 0;
+  right: 0;
+  transform: rotateY(180deg);
   margin: 0 !important;
   padding: 10px 8px 10px 12px !important;
   position: absolute;
@@ -11,7 +12,7 @@
 }
 
 .content {
-  text-align: right;
+  text-align: center;
   border-bottom: 1px solid #eee;
   font-size: 14px;
   font-weight: normal;
