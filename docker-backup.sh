@@ -4,8 +4,8 @@
 set -e
 
 # Configure those to match your Planka Docker container names
-PLANKA_DOCKER_CONTAINER_POSTGRES="planka_postgres_1"
-PLANKA_DOCKER_CONTAINER_PLANKA="planka_planka_1"
+PLANKA_DOCKER_CONTAINER_POSTGRES="rayatask-rayatask-1"
+PLANKA_DOCKER_CONTAINER_PLANKA="rayatask-postgres-1"
 
 # Create Temporary folder
 BACKUP_DATETIME=$(date --utc +%FT%H-%M-%SZ)
