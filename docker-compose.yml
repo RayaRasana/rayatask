@@ -2,7 +2,7 @@ version: '3'
 
 services:
   planka:
-    image: ghcr.io/rayarasana/rayatask-multidev:latest
+    image: rayatask:latest
     restart: on-failure
     volumes:
       - user-avatars:/app/public/user-avatars
@@ -11,7 +11,7 @@ services:
     ports:
       - 3000:1337
     environment:
-      - BASE_URL=http://localhost:3000
+      - BASE_URL=http://rayatask.local:3000
       - DATABASE_URL=postgresql://postgres@postgres/planka
       - SECRET_KEY=0e2f1c5cc0ec4faf6a1bb89223a49673276c2bc5391ae5168785db0d38a0b07e6e0c5631d9d5ad7aa521e75743a7c3eef33718d57cd5bf5d263223ac3637c704
 
