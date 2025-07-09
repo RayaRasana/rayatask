@@ -2,7 +2,7 @@ version: '3'
 
 services:
   planka:
-    image: ghcr.io/rayarasana/rayatask-multidev:2.1
+    image: ghcr.io/rayarasana/rayatask:latest
     restart: on-failure
     volumes:
       - user-avatars:/app/public/user-avatars
